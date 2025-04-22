@@ -3,8 +3,13 @@ from pydantic import BaseModel
 from models import load_model_artifacts
 from utils import mask_pii_all
 
+app = FastAPI(
+    title="Email Classifier API",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json"
+)
 
-app = FastAPI()
 model, vectorizer, label_encoder = load_model_artifacts()
 
 class EmailRequest(BaseModel):
