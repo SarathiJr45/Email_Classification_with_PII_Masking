@@ -48,4 +48,4 @@ def load_model_artifacts():
     return model, vectorizer, label_encoder
 
 if __name__ == "__main__":
-    train_and_save_model()
+    train_and_save_model("data/combined_emails_with_natural_pii.csv")
