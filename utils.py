@@ -38,7 +38,7 @@ def mask_pii_all(text):
                 continue
             if re.search(r'\d', ent.text):
                 continue
-            replacements.append((ent.start_char, ent.end_char, "full_name", ent.text)
+            replacements.append((ent.start_char, ent.end_char, "full_name", ent.text))
 
     for label, pattern in patterns.items():
         for match in re.finditer(pattern, text, re.IGNORECASE):
