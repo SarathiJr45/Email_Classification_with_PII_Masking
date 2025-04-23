@@ -34,11 +34,11 @@ def mask_pii_all(text):
     for ent in doc.ents:
         if ent.label_ == "PERSON":
             tokens = ent.text.strip().split()
-            if len(tokens) < 2 or any(tok.lower() in {"card", "cvv", "expiry"} for tok in tokens):
+            if any(tok.lower() in {"card", "cvv", "expiry"} for tok in tokens):
                 continue
             if re.search(r'\d', ent.text):
                 continue
-            replacements.append((ent.start_char, ent.end_char, "full_name", ent.text))
+            replacements.append((ent.start_char, ent.end_char, "full_name", ent.text)
 
     for label, pattern in patterns.items():
         for match in re.finditer(pattern, text, re.IGNORECASE):
