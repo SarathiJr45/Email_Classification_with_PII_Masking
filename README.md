@@ -12,9 +12,9 @@ pinned: false
 
 This is a Docker-based Hugging Face Space using **FastAPI** to:
 
-- 🔒 Mask personal information (PII) using spaCy + regex
-- 🧠 Classify support emails into categories like Billing, Technical, etc.
-- 📤 Return clean JSON with masked entities and classification
+-  Mask personal information (PII) using spaCy + regex
+-  Classify support emails into categories like Billing, Technical, etc.
+-  Return clean JSON with masked entities and classification
 
 ## How to Use
 
