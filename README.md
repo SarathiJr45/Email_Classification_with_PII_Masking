@@ -18,6 +18,16 @@ This is a Docker-based Hugging Face Space using **FastAPI** to:
 
 ## How to Use
 
+**Demo**
+
+API Base URL:
+
+https://sarathijr--masked-emailclassifier.hf.space
+
+Swagger UI:
+
+https://sarathijr--masked-emailclassifier.hf.space/docs
+
 Send a POST request to `/` with:
 
 **Example**:
