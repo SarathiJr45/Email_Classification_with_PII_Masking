@@ -40,6 +40,14 @@ def mask_pii_all(text):
                 continue
             replacements.append((ent.start_char, ent.end_char, "full_name", ent.text))
 
+    # Regex backup for name detection
+    name_pattern = re.compile(r'\b(?:my name is|this is)\s+([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)', re.IGNORECASE)
+    for match in name_pattern.finditer(text):
+        full_name = match.group(1)
+        start = match.start(1)
+        end = match.end(1)
+        replacements.append((start, end, "full_name", full_name))
+
     for label, pattern in patterns.items():
         for match in re.finditer(pattern, text, re.IGNORECASE):
             replacements.append((match.start(), match.end(), label, match.group()))
