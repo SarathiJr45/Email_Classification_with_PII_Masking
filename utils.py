@@ -25,7 +25,7 @@ def mask_pii_all(text):
         "phone_number": r'(?:(?:\+91|91|0)?[\s\-]?)?[6-9]\d{9}',
         "aadhar_num": r'\b\d{4}\s*\d{4}\s*\d{4}\b',
         "credit_debit_no": r'\b(?:\d{4}[ -]?){3}\d{4}\b',
-        "cvv_no": r'\bCVV[:\s\-]*\d{3,4}\b|\b\d{3,4}(?=\s*CVV)',
+        "cvv_no": r'\bCVV(?:\s+is)?[:\s\-]*\d{3,4}\b|\b\d{3,4}(?=\s*CVV)',
         "expiry_no": r'\b(0[1-9]|1[0-2])[/\-](\d{2}|\d{4})\b',
         "dob": r'\b(?:\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})|(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[.\s-]\d{1,2}[,.\s-]\d{2,4})\b'
     }
